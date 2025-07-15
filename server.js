@@ -4,15 +4,13 @@ const localPort = 3000;
 app.listen(localPort, ()=>{console.log(`listening on port: ${localPort}`)});
 // ===== App =====
 app.get('/', (req, res) => {
+  // res.redirect('/greetings/Devin');
   // res.redirect('/roll/15');
   res.redirect('/shoes?min=0&max=2000&type=boot')
 });
 
 app.get('/greetings/:username', (req, res)=>{
-  res.send(`
-    <h1>Hello there, ${req.params.username}</h1>
-    <h2>one two three</h2>
-    `);
+  res.send(`<h1>Hello there, ${req.params.username}</h1>`);
 });
 
 app.get('/roll/:num', (req,res)=>{
